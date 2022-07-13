@@ -8,93 +8,91 @@
 
     <TextView
         android:id="@+id/tvId"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="75dp"
-        android:layout_marginEnd="20dp"
-        android:text="ID"
-        app:layout_constraintEnd_toStartOf="@+id/etNome"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="73dp"
+        android:hint="ID"
+        android:textSize="25sp"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etNome"
+        android:id="@+id/etName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="83dp"
+        android:layout_marginTop="55dp"
         android:ems="10"
+        android:hint="Nome"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="@+id/tvId"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvId" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etPreco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="1dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:hint="Preço"
+        android:inputType="number|numberDecimal"
         android:minHeight="48dp"
-        android:text="Name"
-        app:layout_constraintStart_toStartOf="@+id/etNome"
-        app:layout_constraintTop_toBottomOf="@+id/etNome" />
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/etName"
+        app:layout_constraintTop_toBottomOf="@+id/etName" />
 
     <EditText
         android:id="@+id/etCodigo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="18dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:hint="Codigo"
+        android:inputType="text"
         android:minHeight="48dp"
-        android:text="Name"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="@+id/etPreco"
         app:layout_constraintTop_toBottomOf="@+id/etPreco" />
-
-    <EditText
-        android:id="@+id/etVolume"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:text="Name"
-        app:layout_constraintStart_toStartOf="@+id/etCodigo"
-        app:layout_constraintTop_toBottomOf="@+id/etCodigo" />
 
     <EditText
         android:id="@+id/etTipo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="26dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:hint="Tipo (ex: Alcoholica)"
+        android:inputType="text"
         android:minHeight="48dp"
-        android:text="Name"
-        app:layout_constraintStart_toStartOf="@+id/etVolume"
-        app:layout_constraintTop_toBottomOf="@+id/etVolume" />
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/etCodigo"
+        app:layout_constraintTop_toBottomOf="@+id/etCodigo" />
 
     <Button
         android:id="@+id/btnCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:text="Button"
+        android:layout_marginEnd="8dp"
+        android:text="Cadastrar"
         app:layout_constraintBaseline_toBaselineOf="@+id/btnUpdate"
+        app:layout_constraintEnd_toStartOf="@+id/btnUpdate"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="34dp"
-        android:text="Button"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="16dp"
+        android:text="Atualizar"
+        android:backgroundTint="@color/gray"
+        app:layout_constraintEnd_toStartOf="@+id/btnDelete"
         app:layout_constraintStart_toEndOf="@+id/btnCreate"
         app:layout_constraintTop_toBottomOf="@+id/etTipo" />
 
@@ -102,28 +100,54 @@
         android:id="@+id/btnDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="Button"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="@color/gray"
+        android:text="Deletar"
+        android:visibility="visible"
         app:layout_constraintBaseline_toBaselineOf="@+id/btnUpdate"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnUpdate" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="26dp"
+        android:text="Salvar"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/btnBack"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpdate" />
 
     <Button
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="@+id/btnUpdate"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="1dp"
+        android:text="Voltar"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/listBebidas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnSave"
         app:layout_constraintTop_toBottomOf="@+id/btnUpdate" />
 
     <ListView
         android:id="@+id/listBebidas"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnBack" />
+        app:layout_constraintTop_toBottomOf="@+id/btnBack"
+        app:layout_constraintVertical_bias="1.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
