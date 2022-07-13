@@ -134,10 +134,12 @@ public class MainActivity extends AppCompatActivity {
                 //Ações dos botões deletar e Atualizar
                 btnAtualizar.setOnClickListener(v ->{
                     atualizarCadastro(bebidaSelecionada, nome,preco,codigo,tipo);
+                    btnDeletar.setVisibility(View.INVISIBLE);
                 });
 
                 btnDeletar.setOnClickListener(v->{
                     deletarBebida(bebidaSelecionada);
+                    btnAtualizar.setVisibility(View.INVISIBLE);
                 });
 
             }
@@ -175,6 +177,8 @@ public class MainActivity extends AppCompatActivity {
 
         BebidaDB bebidaDB = new BebidaDB(this);
         bebidaDB.delete(bebida.getId());
+        Toast.makeText(getApplicationContext(), "Bebida eliminada", Toast.LENGTH_SHORT).show();
+
         Voltar();
     }
 
